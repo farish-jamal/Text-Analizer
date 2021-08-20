@@ -1,4 +1,5 @@
 import React from 'react'
+import './Navbar.css'
 
 function Navbar(props) {
     return (
@@ -17,14 +18,17 @@ function Navbar(props) {
                             <a className="nav-link" href="/">{props.aboutText}</a>
                         </li>
                     </ul>
-                    <div className={`form-check form-switch text-${props.mode === 'light'? 'dark' : 'light'}`}>
+                    <div className="colorPick" onClick={props.togglegMode}></div>
+                    <div className="colorPick" onClick={props.toggleyMode}></div>
+                    <div className="colorPick" onClick={props.togglerMode}></div>
+                    <div className={`form-check form-switch text-${props.mode === 'light' ? 'dark' : 'light'}`}>
                         <input className="form-check-input" onClick={props.toggleMode} type="checkbox" id="flexSwitchCheckDefault" />
-                            <label className="form-check-label" htmlFor="flexSwitchCheckDefault">Dark Mode</label>
-</div>
+                        <label className="form-check-label" htmlFor="flexSwitchCheckDefault">Dark Mode</label>
                     </div>
                 </div>
-            </nav>
-            )
+            </div>
+        </nav>
+    )
 }
 
-            export default Navbar
+export default Navbar

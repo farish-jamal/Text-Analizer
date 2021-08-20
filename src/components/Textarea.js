@@ -25,7 +25,7 @@ function Textarea(props) {
     const [text, setText] = useState("Dummy Text Here! Erase it and paste your text here to analize!")
     return (
         <>
-            <div className="container text-center" style={{color:props.mode === 'light'? '#042743' : 'white'}}>
+            <div className="container text-center" style={{color:props.mode === 'light'? '#042743' : 'white'}}> 
                 <h1 className="my-3">{props.heading}</h1>
                 <div className="mb-3">
                     <textarea className="form-control" value={text} style={{backgroundColor:props.mode === 'light'? 'white' : 'grey', color:props.mode === 'light'? '#042743' : 'white' }} onChange={handleChange} rows="8" id="myBox"></textarea>
