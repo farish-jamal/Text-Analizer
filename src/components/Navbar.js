@@ -18,9 +18,9 @@ function Navbar(props) {
                             <a className="nav-link" href="/">{props.aboutText}</a>
                         </li>
                     </ul>
-                    <div className="colorPick" onClick={props.togglegMode}></div>
-                    <div className="colorPick" onClick={props.toggleyMode}></div>
-                    <div className="colorPick" onClick={props.togglerMode}></div>
+                    <div className="colorPick" onClick={props.togglegreenMode}></div>
+                    <div className="colorPick" onClick={props.toggleyellowMode}></div>
+                    <div className="colorPick" onClick={props.toggleredMode}></div>
                     <div className={`form-check form-switch text-${props.mode === 'light' ? 'dark' : 'light'}`}>
                         <input className="form-check-input" onClick={props.toggleMode} type="checkbox" id="flexSwitchCheckDefault" />
                         <label className="form-check-label" htmlFor="flexSwitchCheckDefault">Dark Mode</label>

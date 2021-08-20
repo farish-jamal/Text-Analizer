@@ -5,9 +5,9 @@ import Textarea from './components/Textarea'
 
 function App() {
     const [mode, setMode] = useState('light')
-    const [gmode, setGMode] = useState('light')
-    const [ymode, setYMode] = useState('light')
-    const [rmode, setRMode] = useState('light')
+    const [greenMode, setGreenMode] = useState('light')
+    const [yellowMode, setYellowMode] = useState('light')
+    const [redMode, setRedMode] = useState('light')
 
     const toggleMode = () => {
       if(mode === 'light' || mode === 'danger' || mode === 'success' || mode === 'warning'){
@@ -19,29 +19,29 @@ function App() {
           document.body.style.backgroundColor = 'white';
       }
     }
-    const togglegMode = () => {
-      if(mode === 'light' || rmode === 'danger' || mode === 'dark' || ymode === 'warning'){
-          setGMode('success');
+    const togglegreenMode = () => {
+      if(mode === 'light' || redMode === 'danger' || mode === 'dark' || yellowMode === 'warning'){
+        setGreenMode('success');
           document.body.style.backgroundColor = 'green';
       }
     }
-    const toggleyMode = () => {
-      if(mode === 'light' || rmode === 'danger' || gmode === 'success' || mode === 'dark'){
-          setYMode('warning');
+    const toggleyellowMode = () => {
+      if(mode === 'light' || redMode === 'danger' || greenMode === 'success' || mode === 'dark'){
+        setYellowMode('warning');
           document.body.style.backgroundColor = 'yellow';
       }
     }
-    const togglerMode = () => {
-      if(mode === 'light' || mode === 'dark' || gmode === 'success' || ymode === 'warning'){
-          setRMode('danger');
+    const toggleredMode = () => {
+      if(mode === 'light' || mode === 'dark' || greenMode === 'success' || yellowMode === 'warning'){
+        setRedMode('danger');
           document.body.style.backgroundColor = 'red';
       }
     }
     return (
         <>
-            <Navbar title="Text Utils" aboutText="About Us" mode={mode} toggleMode={toggleMode} gmode={mode} togglegMode={togglegMode} ymode={mode} toggleyMode={toggleyMode} rmode={mode} togglerMode={togglerMode}/>
+            <Navbar title="Text Utils" aboutText="About Us" mode={mode} toggleMode={toggleMode} greenMode={mode} togglegreenMode={togglegreenMode} yellowMode={mode} toggleyellowMode={toggleyellowMode} redMode={mode} toggleredMode={toggleredMode}/>
             <div className="container my-5">
-                <Textarea heading="Enter Text to analize" mode={mode} gmode={gmode} ymode={ymode} rmode={rmode}/>
+                <Textarea heading="Enter Text to analize" mode={mode} greenMode={greenMode} yellowMode={yellowMode} redMode={redMode}/>
                 {/* <About /> */}
             </div>
         </>
