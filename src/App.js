@@ -20,33 +20,21 @@ function App() {
       }
     }
     const togglegMode = () => {
-      if(gmode === 'light' || gmode === 'danger' || gmode === 'dark' || gmode === 'warning'){
+      if(mode === 'light' || rmode === 'danger' || mode === 'dark' || ymode === 'warning'){
           setGMode('success');
           document.body.style.backgroundColor = 'green';
       }
-      else{
-          setGMode('light');
-          document.body.style.backgroundColor = 'white';
-      }
     }
     const toggleyMode = () => {
-      if(ymode === 'light' || ymode === 'danger' || ymode === 'success' || ymode === 'dark'){
+      if(mode === 'light' || rmode === 'danger' || gmode === 'success' || mode === 'dark'){
           setYMode('warning');
           document.body.style.backgroundColor = 'yellow';
       }
-      else{
-          setYMode('light');
-          document.body.style.backgroundColor = 'white';
-      }
     }
     const togglerMode = () => {
-      if(rmode === 'light' || rmode === 'dark' || rmode === 'success' || rmode === 'warning'){
+      if(mode === 'light' || mode === 'dark' || gmode === 'success' || ymode === 'warning'){
           setRMode('danger');
           document.body.style.backgroundColor = 'red';
-      }
-      else{
-          setRMode('light');
-          document.body.style.backgroundColor = 'white';
       }
     }
     return (
