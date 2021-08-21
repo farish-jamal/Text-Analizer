@@ -1,8 +1,9 @@
 import React, { useState } from 'react'
 import Alert from './components/Alert'
-// import About from './components/About'
+import About from './components/About'
 import Navbar from './components/Navbar'
 import Textarea from './components/Textarea'
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 function App() {
     const [mode, setMode] = useState('light')
@@ -47,8 +48,8 @@ function App() {
 
     const showAlert = (type, message) => {
         setAlert({
-            message : message,
-            type : type
+            message: message,
+            type: type
         })
         setTimeout(() => {
             setAlert(null)
@@ -56,12 +57,21 @@ function App() {
     }
     return (
         <>
-            <Navbar title="Text Utils" aboutText="About Us" mode={mode} toggleMode={toggleMode} greenMode={greenMode} togglegreenMode={togglegreenMode} yellowMode={yellowMode} toggleyellowMode={toggleyellowMode} redMode={redMode} toggleredMode={toggleredMode} />
-            <Alert  alert={alert}/>
-            <div className="container my-5">
-                <Textarea heading="Enter Text to analize" mode={mode} greenMode={greenMode} yellowMode={yellowMode} redMode={redMode} showAlert={showAlert} />
-                {/* <About /> */}
-            </div>
+            <Router>
+                <Navbar title="Text Utils" aboutText="About Us" mode={mode} toggleMode={toggleMode} greenMode={greenMode} togglegreenMode={togglegreenMode} yellowMode={yellowMode} toggleyellowMode={toggleyellowMode} redMode={redMode} toggleredMode={toggleredMode} />
+                <Alert alert={alert} />
+                <Switch>
+                    <Route exact path="/about">
+                        <About mode={mode} />
+                    </Route>
+                    <Route exact path="/">
+                        <div className="container my-5">
+                            <Textarea heading="Enter Text to analize" mode={mode}  showAlert={showAlert} />
+                            {/* <About /> */}
+                        </div>
+                    </Route>
+                </Switch>
+            </Router>
         </>
     )
 }
