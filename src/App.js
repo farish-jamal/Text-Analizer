@@ -39,7 +39,7 @@ function App() {
     }
     return (
         <>
-            <Navbar title="Text Utils" aboutText="About Us" mode={mode} toggleMode={toggleMode} greenMode={mode} togglegreenMode={togglegreenMode} yellowMode={mode} toggleyellowMode={toggleyellowMode} redMode={mode} toggleredMode={toggleredMode}/>
+            <Navbar title="Text Utils" aboutText="About Us" mode={mode} toggleMode={toggleMode} greenMode={greenMode} togglegreenMode={togglegreenMode} yellowMode={yellowMode} toggleyellowMode={toggleyellowMode} redMode={redMode} toggleredMode={toggleredMode}/>
             <div className="container my-5">
                 <Textarea heading="Enter Text to analize" mode={mode} greenMode={greenMode} yellowMode={yellowMode} redMode={redMode}/>
                 {/* <About /> */}
