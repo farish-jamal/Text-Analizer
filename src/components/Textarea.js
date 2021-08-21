@@ -4,19 +4,23 @@ function Textarea(props) {
     const handleupClick = () => {
         let newText = text.toUpperCase();
         setText(newText)
+        props.showAlert('success', 'Converted to Upper Case!')
     }
     const handledownClick = () => {
         let newText = text.toLowerCase();
         setText(newText)
+        props.showAlert('success', 'Converted to Lower Case!')
     }
     const handleClearClick = () => {
         let newText = '';
         setText(newText)
+        props.showAlert('success', 'Text has been cleared!')
     }
     const handleCutClick = () => {
         let copyText = document.getElementById('myBox');
         copyText.select();
         document.execCommand('copy');
+        props.showAlert('success', 'Copy to Clipboard!')    
     }
 
     const handleChange = (event) => {

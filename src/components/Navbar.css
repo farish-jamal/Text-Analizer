@@ -12,3 +12,9 @@
 .colorPick:nth-child(3){
     background-color: yellow;
 }
+
+@media only screen and (max-width: 700px){
+    .colorPick{
+        margin: 8px 10px;
+    }
+}
